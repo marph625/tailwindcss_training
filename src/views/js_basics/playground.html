@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playground</title>
+<!--    <link rel="stylesheet" href="../../../css/output.css">-->
+</head>
+<body>
+<!--<script src="../../js/javascript_info/part_two/document/browser_environment_specs.js"></script>-->
+
+    <table id="someTables">
+        <tr>
+            <td>one</td><td>two</td>
+        </tr>
+        <tr>
+            <td>three</td><td>four</td>
+        </tr>
+    </table>
+
+    <script>
+        // get td with "two" (first row, second column)
+        let td0 = someTables.rows[0].cells[0];
+        let td1 = someTables.rows[0].cells[1];
+        let td2 = someTables.rows[1].cells[0];
+        let td3 = someTables.rows[1].cells[1];
+        td0.style.backgroundColor = "yellow";
+        td1.style.backgroundColor = "green";
+        td2.style.backgroundColor = "red";
+        td3.style.backgroundColor = "blue";
+    </script>
+
+    <div style="display: flex">
+        <table id="bigTable11">
+            <tr>
+                <td>1:1</td><td>2:1</td><td>3:1</td><td>4:1</td><td>5:1</td>
+            </tr>
+            <tr>
+                <td>1:2</td><td>2:2</td><td>3:2</td><td>4:2</td><td>5:2</td>
+            </tr>
+            <tr>
+                <td>1:3</td><td>2:3</td><td>3:3</td><td>4:3</td><td>5:3</td>
+            </tr>
+            <tr>
+                <td>1:4</td><td>2:4</td><td>3:4</td><td>4:4</td><td>5:4</td>
+            </tr>
+            <tr>
+                <td>1:5</td><td>2:5</td><td>3:5</td><td>4:5</td><td>5:5</td>
+            </tr>
+        </table>
+        <table id="bigTable12">
+            <tr>
+                <td>1:1</td><td>2:1</td><td>3:1</td><td>4:1</td><td>5:1</td>
+            </tr>
+            <tr>
+                <td>1:2</td><td>2:2</td><td>3:2</td><td>4:2</td><td>5:2</td>
+            </tr>
+            <tr>
+                <td>1:3</td><td>2:3</td><td>3:3</td><td>4:3</td><td>5:3</td>
+            </tr>
+            <tr>
+                <td>1:4</td><td>2:4</td><td>3:4</td><td>4:4</td><td>5:4</td>
+            </tr>
+            <tr>
+                <td>1:5</td><td>2:5</td><td>3:5</td><td>4:5</td><td>5:5</td>
+            </tr>
+        </table>
+    </div>
+
+<table id="bigTable2">
+    <tr>
+        <td>1:1</td><td>2:1</td><td>3:1</td><td>4:1</td><td>5:1</td>
+    </tr>
+    <tr>
+        <td>1:2</td><td>2:2</td><td>3:2</td><td>4:2</td><td>5:2</td>
+    </tr>
+    <tr>
+        <td>1:3</td><td>2:3</td><td>3:3</td><td>4:3</td><td>5:3</td>
+    </tr>
+    <tr>
+        <td>1:4</td><td>2:4</td><td>3:4</td><td>4:4</td><td>5:4</td>
+    </tr>
+    <tr>
+        <td>1:5</td><td>2:5</td><td>3:5</td><td>4:5</td><td>5:5</td>
+    </tr>
+</table>
+
+    <script>
+        let c0 = bigTable.rows[0].cells[0];
+        let c1 = bigTable.rows[1].cells[1];
+        let c2 = bigTable.rows[2].cells[2];
+        let c3 = bigTable.rows[3].cells[3];
+        let c4 = bigTable.rows[4].cells[4];
+
+        c0.style.backgroundColor = "red";
+        c1.style.backgroundColor = "red";
+        c2.style.backgroundColor = "red";
+        c3.style.backgroundColor = "red";
+        c4.style.backgroundColor = "red";
+    </script>
+
+    <script>
+        let table = document.getElementById("bigTable11");
+
+        for (let i = 0; i < table.rows.length; i++) {
+            let row = table.rows[i];
+            row.cells[i].style.backgroundColor = "red"
+        }
+
+        // let table2 = document.getElementById("bigTable12");
+        //
+        // for (let i = 0, j = 5; i < table2.rows.length; i++, j--) {
+        //     let row2 = table2.rows[j];
+        //     row2.cells[i].style.backgroundColor = "red"
+        // }
+
+        let c0 = bigTable12.rows[0].cells[4];
+        let c1 = bigTable12.rows[1].cells[3];
+        let c2 = bigTable12.rows[2].cells[2];
+        let c3 = bigTable12.rows[3].cells[1];
+        let c4 = bigTable12.rows[4].cells[0];
+
+        c0.style.backgroundColor = "red";
+        c1.style.backgroundColor = "red";
+        c2.style.backgroundColor = "red";
+        c3.style.backgroundColor = "red";
+        c4.style.backgroundColor = "red";
+    </script>
+
+    <script>
+        let wideTable = document.getElementById("bigTable2");
+
+        for (let i = 0; i < wideTable.rows.length; i++) {
+            let row = wideTable.rows[i];
+            row.cells[i].style.background = "green";
+        }
+    </script>
+
+</body>
+
+</html>

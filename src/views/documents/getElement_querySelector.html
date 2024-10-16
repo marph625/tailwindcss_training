@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--   getElementById() -->
+
+    <div id="elem">
+        <div id="elem-content">Content of the parent element</div>
+    </div>
+
+<script>
+    // get the element
+    let elem = document.getElementById("elem-content");
+    elem.style.background = "red";
+    elem.style.color = "yellow";
+    elem.style.fontStyle = "italic";
+</script>
+
+<!--   querySelectorAll() -->
+
+<ul>
+    <li>The</li>
+    <li>Test</li>
+</ul>
+<ul>
+    <li>has</li>
+    <li>passed</li>
+</ul>
+
+<hr>
+
+<!-- matches() -->
+<a href="http://example.com/ex-file.zip">...</a>
+<a href="http://archlinux.org">...</a>
+<a href="http://example.com/ex-fi.zip">...</a>
+<a href="http://example.com/ex-file.html">...</a>
+<a href="http://example.com/ex-file.zi">...</a>
+<a href="http://example.com/ex-file.z">...</a>
+<a href="http://example.com/ex-file.ip">...</a>
+<a href="http://example.com/ex-file.p">...</a>
+<a href="http://example.com/ex-file.css">...</a>
+<a href="http://example.com/zipfile.zip">...</a>
+
+<hr>
+
+<!-- closest() -->
+<h1>Contents</h1>
+
+<div class="contents">
+    <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 2</li>
+    </ul>
+</div>
+
+<!-- find all input tags inside a table -->
+<table id="inputTable">
+    <tr>
+        <td>Your age:</td>
+        <td>
+            <label>
+                <input type="radio" name="age" value="young" checked> less than 18
+            </label>
+            <label>
+                <input type="radio" name="age" value="mature" checked> from 18 to 50
+            </label>
+            <label>
+                <input type="radio" name="age" value="senior" checked> more than 50
+            </label>
+        </td>
+    </tr>
+</table>
+
+<!-- find all the articles -->
+<form name="my-form">
+    <div class="article">Article</div>
+    <div class="article">Long Article</div>
+</form>
+
+<div>First div</div>
+
+<script>
+    let divsLive = document.getElementsByTagName('div');
+    let divsStatic = document.querySelectorAll('div');
+    alert("all divs live: " + divsLive.length) // 6
+    alert("all divs static: " + divsStatic.length) // 6
+</script>
+
+<div>Second div</div>
+
+<script>
+    alert("all divs live: " + divsLive.length) // 7
+    alert("all divs static: " + divsStatic.length) // 6
+</script>
+
+<script>
+    // find all the articles
+    // find name by attribute
+    let form = document.getElementsByName('my-form')[0];
+
+    // find by class inside the form
+    let articles = form.getElementsByClassName('article')
+    alert(articles.length) // 2, found two elements with class "article"
+
+    // find all input tags inside a table
+    let inputFields = inputTable.getElementsByTagName('input');
+    for (let input of inputFields) {
+        alert(input.value + ": " + input.checked);
+    }
+
+    // getElementsBy*
+    // get all the divs
+    let divs = document.getElementsByTagName('div');
+
+    for (let div of divs) {
+        alert(div);
+    }
+
+    // closest()
+    let chapter = document.querySelector('.chapter'); // LI
+
+    alert(chapter.closest(".book"))
+    alert(chapter.closest(".contents"))
+    alert(chapter.closest("h1"))
+
+    // matches()
+    // can be any collection instead of document.body.children
+    for (let elem of document.body.children) {
+        if (elem.matches('a[href$="zip"]')) {
+            alert("All zip files here: " + elem.href)
+        }
+    }
+
+    let elements = document.querySelectorAll("ul > li:last-child");
+
+    // let hoverElements = document.querySelectorAll("ul > li:hover");
+    //
+    // for (let hov of hoverElements) {
+    //     alert(hov.innerHTML)
+    // }
+
+    for (let elem of elements) {
+        alert(elem.innerHTML);
+    }
+
+    // same
+    for (let e = 0; e < elements.length; e++) {
+        alert(elements[e].innerHTML + " the second");
+    }
+
+</script>
+</body>
+</html>

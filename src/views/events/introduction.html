@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro</title>
+</head>
+<body>
+<!-- Single quotes inside double quotes -->
+<input type="button" value="Click me" onclick="alert('Click')">
+
+<!-- Event Handlers - HTML-Attribute -->
+<input type="button" value="Count rabbits" onclick="countRabbits()">
+
+<script>
+    function countRabbits() {
+        for (let i = 1; i <= 3; i++) {
+            alert('rabbit number: ' + i);
+        }
+    }
+</script>
+
+<!-- DOM-Properties -->
+<input type="button" id="ele" value="I am a button that relates to a DOM-Property!">
+
+<script>
+    ele.onclick = function () {
+        alert("click")
+    }
+</script>
+
+
+<input id="elem" type="button" value="I'm a button, Morty!">
+
+<script>
+    // eventListener
+    function handler1() {
+        alert("Thanks")
+    }
+
+    function handler2() {
+        alert("Thanks again")
+    }
+
+    elem.onclick = () => alert("Hello");
+    elem.addEventListener("click", handler1) // Thanks
+    elem.addEventListener("click", handler2) // Thanks again
+</script>
+
+<input id="eleme" type="button" value="Riiick Haaalp!" style="padding: 10px">
+
+<script>
+    eleme.onclick = (event) => {
+        // show event type, element and coordinates of the click
+        alert(event.type + " at " + event.currentTarget);
+        alert("Coordinates: " + event.clientX + ":" + event.clientY);
+    };
+</script>
+
+<button id="cakeButton">The cake is a lie.</button>
+
+<script>
+    // cakeButton
+    let obj = {
+        handleEvent(event) {
+            alert(event.type + " at " + event.currentTarget);
+        }
+    };
+
+    cakeButton.addEventListener('click', obj);
+</script>
+
+<script>
+
+
+    // some events only work with addEventListener
+    // will never run
+    // document.onDOMContentLoaded = function() {
+    // alert("DOM built");
+    // };
+
+    // this way it works
+    document.addEventListener("DOMContentLoaded", () => {
+        alert("DOM built")
+    });
+
+</script>
+
+<button id="iShouldModulize">MouseButton</button>
+
+<script>
+    // finally some Java
+    class Menu {
+        handleEvent(event) {
+            switch (event.type) {
+                case 'mousedown':
+                    iShouldModulize.innerHTML = "Mouse button pressed ...";
+                    break;
+                case 'mouseup':
+                    iShouldModulize.innerHTML = "... and released";
+                    break;
+            }
+        }
+    }
+
+    let menu = new Menu();
+    iShouldModulize.addEventListener('mousedown', menu);
+    iShouldModulize.addEventListener('mouseup', menu);
+</script>
+
+<button id="eventButton">let redeclaration</button>
+
+<script>
+    class Menu2 {
+        handleEvent(event) {
+            // mousedown -> onMousedown
+            let method = 'on' + event.type[0].toUpperCase() + event.type.slice(1);
+            this[method](event);
+        }
+
+        onMousedown() {
+            eventButton.innerHTML = "Mouse button pressed ...";
+        }
+
+        onMouseup() {
+            eventButton.innerHTML = "... and released.";
+        }
+    }
+
+    let menu2 = new Menu2();
+    eventButton.addEventListener('mousedown', menu2);
+    eventButton.addEventListener('mouseup', menu2);
+
+</script>
+
+</body>
+</html>

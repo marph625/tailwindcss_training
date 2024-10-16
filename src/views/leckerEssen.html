@@ -5,19 +5,46 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LeckerLecker</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../../css/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <link href="../../css/fontawesome.css" rel="stylesheet" />
+    <link href="../../css/brands.css" rel="stylesheet" />
+    <link href="../../css/solid.css" rel="stylesheet" />
+
+    <title>Lecker Essen</title>
+
 </head>
-<body>
+<body style="font-family: Montserrat, sans-serif">
 <header class="sticky top-0 h-20 w-auto bg-gray-100 text-center flex justify-between items-center px-5">
     <a href="#">
         <img src="//csite.nicepage.com/Images/logo-w.png" alt="no logo :/"
              class="w-36 h-12">
     </a>
-    <a href="#">
-        <img src="//csite.nicepage.com/Images/Site/icon-close.png" alt="X"
-             class="w-7 h-7 p-1 hover:bg-blue-100">
-    </a>
+    <div class="lg:hidden">
+        <i id="toggleMenu" class="hamburger-toggle fa-solid fa-bars fa-2xl absolute right-5"></i>
+    </div>
+<!--    <a href="#">-->
+<!--        <img src="//csite.nicepage.com/Images/Site/icon-close.png" alt="X"-->
+<!--             class="w-7 h-7 p-1 hover:bg-blue-100">-->
+<!--    </a>-->
 </header>
+
+<!-- phone:flex phone:mx-auto phone:flex-col -->
+<nav id="navMenu" class="hidden lg:flex lg:flex-row lg:justify-evenly px-4 text-center mt-8">
+
+    <a href="#" class="lg:nav-link">HOME</a>
+    <a href="#" class="lg:nav-link">LANDING</a>
+    <a href="#" class="lg:nav-link">ABOUT</a>
+    <a href="#" class="lg:nav-link">MENU</a>
+    <a href="#" class="lg:nav-link">TEAM</a>
+    <a href="#" class="lg:nav-link">CONTACT</a>
+</nav>
+
+
+<script type="module" src="../js/toggleMenu.js"></script>
 </body>
 </html>

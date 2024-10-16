@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../css/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -13,7 +14,7 @@
     <title>Document</title>
 
 <!--    Dieses Skript wird wohl gebraucht, wenn man beim Hovern Bilder zoomen möchte -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<!--    <script src="https://cdn.tailwindcss.com"></script>-->
 </head>
 
 <body style="font-family: Montserrat, sans-serif">
@@ -39,26 +40,21 @@
             class="text-blue-300 font-bold">Freepik
         </a>
     </p>
-
-<!--
-        Custom Styles hinzuzufügen, klappt noch nicht so recht wie ich will
-        Mein Ziel ist mit 'gallery' alle Bilder im div auf einmal zu bearbeiten,
-        ohne, dass andere Bilder betroffen sind. Kann nicht so schwer sein.
--->
-    <div class="grid grid-cols-1 gap-8 mt-16">
+    
+    <div class="grid grid-cols-1 gap-8 mt-16 gallery">
         <img src="../../images/garage_art.jpeg" alt="no pic :/"
-             class="rounded-xl">
+             >
 
 <!--        TODO: Bilder zoombar machen, ohne, dass es das Layout zerschießt-->
 <!--        <picture class="rounded-lg overflow-hidden block">-->
         <img src="../../images/living_room.jpeg" alt="no pic :/"
-             class="rounded-xl">
+             >
 <!--                 class="hover: scale-50 ease-in duration-200">-->
 <!--        </picture>-->
         <img src="../../images/river_night.jpeg" alt="no pic :/"
-             class="rounded-xl">
+             >
         <img src="../../images/wheat_plain.jpeg" alt="no pic :/"
-             class="rounded-xl">
+             >
     </div>
 
     <a href="#">

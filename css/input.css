@@ -4,8 +4,16 @@
 
 /* Custom styles */
 
-@layer components {
+@layer utilities {
     .gallery img {
         border-radius: 0.75rem; /* Equivalent to rounded-xl in Tailwind */
+    }
+
+    .nav-link {
+        @apply px-4 py-2; /* Padding x and y axises */
+    }
+
+    .nav-link:hover {
+        @apply text-yellow-400; /* Hover background */
     }
 }
