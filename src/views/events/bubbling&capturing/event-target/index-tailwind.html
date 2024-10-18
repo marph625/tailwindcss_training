@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    <link rel="stylesheet" href="example.css">-->
+    <link rel="stylesheet" href="/css/output.css">
+    <title>event.capture</title>
+</head>
+<body>
+A click shows both <code>event.target</code> and <code>this</code> to compare
+
+<form id="form" class="bg-green-700 relative w-40 h-40 text-center cursor-pointer rounded-2xl">FORM
+    <div class="bg-blue-600 absolute top-6 left-6 w-24 h-24 rounded-2xl">DIV
+        <p class="bg-red-600 absolute top-6 left-6 w-12 h-12 leading-12 m-0 rounded-2xl">P</p>
+    </div>
+</form>
+<script src="script.js"></script>
+</body>
+</html>

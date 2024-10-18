@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+<body>
+<a href="/" style="margin-right: 10px">Home</a>
+Counter: <input type="button" value="1" data-counter>
+One more counter: <input type="button" value="2" data-counter>
+
+<script>
+    document.addEventListener('click', function(event) {
+        if (event.target.dataset.counter != undefined) { // if the attribute exists
+            event.target.value++;
+        }
+    })
+</script>
+</body>
+</html>

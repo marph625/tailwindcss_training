@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body>
+<a href="/" class="mb-10 mt-4 mx-2">Home</a>
+    <div id="menu" class="mt-4">
+        <button data-action="save" class="bg-gray-300 rounded-xl border-black border-[1px] px-[6px] py-[1px] mx-2">Save</button>
+        <button data-action="load" class="bg-gray-300 rounded-xl border-black border-[1px] px-[6px] py-[1px] mx-2">Load</button>
+        <button data-action="search" class="bg-gray-300 rounded-xl border-black border-[1px] px-[6px] py-[1px] mx-2">Search</button>
+    </div>
+
+    <script>
+        class Menu {
+            constructor(elem) {
+                this._elem = elem;
+                elem.onclick = this.onClick.bind(this);
+            }
+
+            // references to attribute 'data-action' in button-tag
+            save() {
+                alert("saving");
+            }
+
+            load() {
+                alert("loading");
+            }
+
+            search() {
+                alert("searching");
+            }
+
+            onClick(event) {
+                let action = event.target.dataset.action;
+                if (action) {
+                    this[action]();
+                }
+            };
+        }
+
+        new Menu(menu);
+    </script>
+</body>
+</html>

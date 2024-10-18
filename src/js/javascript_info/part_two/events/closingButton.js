@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // if there is a card, it's display will be set to 'none'
             let card = closeButton.closest(".card");
             if (card) {
+                // how to do it in plain html/css, not tailwind
                 card.style.display = "none";
                 console.log("X clicked")
             }

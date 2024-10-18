@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="/">Home</a>
+<button data-toggle-id-ok-i-can-customize-this-attribute="subscribe-mail">
+    Show the subscription form
+</button>
+
+<form id="subscribe-mail" hidden>
+    Your mail: <input type="email">
+</form>
+
+<script>
+    document.addEventListener('click', function(event) {
+        // grabs the custom button attribute but in camelCase
+        let id = event.target.dataset.toggleIdOkICanCustomizeThisAttribute;
+        if (!id) return;
+
+        let elem = document.getElementById(id);
+        elem.hidden = !elem.hidden;
+    });
+</script>
+</body>
+</html>

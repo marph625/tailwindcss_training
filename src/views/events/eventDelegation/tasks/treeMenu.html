@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="/" style="margin-bottom: 10px; font-size: 24px;">Home</a>
+<h1>Click on an element of the list and the children of the element will toggle</h1>
+<hr>
+    <ul id="grandParent">
+        <li class="title"><span>Animals</span>
+        <ul>
+            <li class="title"><span>Mammals</span>
+            <ul>
+                <li>Cows</li>
+                <li>Donkeys</li>
+                <li>Dogs</li>
+                <li>Tigers</li>
+            </ul>
+            </li>
+            <li class="title"><span>Other</span>
+            <ul>
+                <li>Snakes</li>
+                <li>Birds</li>
+                <li>Lizards</li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+        <li class="title"><span>Fishes</span>
+        <ul>
+            <li class="title"><span>Aquarium</span>
+            <ul>
+                <li>Guppy</li>
+                <li>Angelfish</li>
+            </ul>
+            </li>
+            <li class="title"><span>Sea</span>
+            <ul>
+                <li>Sea trout</li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+    </ul>
+
+    <script>
+        let grandParentList = document.getElementById('grandParent');
+
+        grandParentList.addEventListener('click', function(event) {
+           // let toggleList = event.target.closest('span');
+           // let toggleListChildren = toggleList.querySelectorAll('span');
+           //
+           // if (!toggleList) {
+           //     return;
+           // } else {
+           //     toggleList.style.display = "none"
+           //     //toggleListChildren.style.display = "none";
+           // }
+
+            let target = event.target;
+
+            if (target.tagName === 'SPAN' && target.parentElement.classList.contains('title')) {
+                toggleVisibility(target.parentElement);
+            }
+
+            function toggleVisibility(titleElement) {
+                titleElement.childNodes.forEach((node) => {
+                    if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'UL') {
+                        // Toggle display: 'none' to hide, 'block' to show
+                        node.style.display = (node.style.display === 'none' || !node.style.display) ? 'block' : 'none';
+                    }
+                })
+            }
+
+        });
+    </script>
+</body>
+</html>

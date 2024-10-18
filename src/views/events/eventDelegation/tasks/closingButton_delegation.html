@@ -14,7 +14,7 @@
     <a href="/">Home</a>
 </header>
 
-<div class="grid grid-cols-1 gap-1">
+<div id="card-section" data-toggle-id="close-button" class="grid grid-cols-1 gap-1">
 
     <div class="card bg-yellow-50 border-2 border-yellow-300 flex">
         <div class="pl-4 py-4">
@@ -23,7 +23,7 @@
                 The horse is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal belonging to the taxonomic family Equidae. The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Eohippus, into the large, single-toed animal of today.
             </p>
         </div>
-        <div class="close-button cursor-pointer text-red-800 font-bold mr-2">[x]</div>
+        <button class="cursor-pointer text-red-800 font-bold mr-2">[x]</button>
     </div>
 
     <div class="card bg-yellow-50 border-2 border-yellow-300 flex">
@@ -34,7 +34,7 @@
                 years.
             </p>
         </div>
-        <div class="close-button cursor-pointer text-red-800 font-bold mr-2">[x]</div>
+        <button class="close-button cursor-pointer text-red-800 font-bold mr-2">[x]</button>
     </div>
 
     <div class="card bg-yellow-50 border-2 border-yellow-300 flex">
@@ -46,10 +46,10 @@
                 felines. Cats are often valued by humans for companionship and for their ability to hunt vermin.
             </p>
         </div>
-        <div class="close-button cursor-pointer text-red-800 font-bold mr-2">[x]</div>
+        <button class="close-button cursor-pointer text-red-800 font-bold mr-2">[x]</button>
     </div>
 </div>
 
-<script src="/src/js/javascript_info/part_two/events/closingButton.js"></script>
+<script src="closingButton_delegation.js"></script>
 </body>
 </html>

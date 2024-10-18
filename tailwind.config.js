@@ -9,7 +9,7 @@ module.exports = {
       ],
 
     safelist: [
-        "hamburger-toggle",
+        "hamburger-toggle", "bg-red-600",
     ],
 
     theme: {
