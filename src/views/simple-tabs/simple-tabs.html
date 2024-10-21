@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/output.css">
+    <title>Simple Tabs</title>
+</head>
+<body>
+    <div class="border-2 border-black rounded-2xl w-1/2 h-72 m-6">
+        <div class="flex justify-start gap-12 mt-4 mx-4">
+            <p class="tab-selector cursor-pointer font-bold" id="ts1">First Tab</p>
+            <p class="tab-selector cursor-pointer" id="ts2">Second Tab</p>
+            <p class="tab-selector cursor-pointer" id="ts3">Third Tab</p>
+            <p class="tab-selector cursor-pointer" id="ts4">Fourth Tab</p>
+        </div>
+        <div class="mt-4 mx-4">
+            <p>Clicking each tab should hide the content of the other tab and show the content of the clicked tab. By default, enable the first tab.</p>
+        </div>
+        <div class="tab-content text-white flex items-center justify-center bg-black rounded-2xl h-24 my-4 mx-4"
+             id="tc1">
+            First Tab content to be displayed here.
+        </div>
+        <div class="tab-content text-white hidden items-center justify-center bg-black rounded-2xl h-24 my-4 mx-4"
+             id="tc2">
+            Second Tab content to be displayed here.
+        </div>
+        <div class="tab-content text-white hidden items-center justify-center bg-black rounded-2xl h-24 my-4 mx-4"
+             id="tc3">
+            Third Tab content to be displayed here.
+        </div>
+        <div class="tab-content text-white hidden items-center justify-center bg-black rounded-2xl h-24 my-4 mx-4"
+             id="tc4">
+            Fourth Tab content to be displayed here.
+        </div>
+        <div class="ml-4">
+            <p>Add some dummy content or just add a simple text showing the tab</p>
+        </div>
+    </div>
+
+    <script src="simple-tabs.js"></script>
+</body>
+</html>
