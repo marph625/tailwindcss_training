@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loopyApproach(0);
 
-    tabSelectors.forEach((tab, index) => {
-        tab.addEventListener('click', () => loopyApproach(index))
-    })
+    tabSelectors.forEach((tab) => {
+        tab.addEventListener('click', () => loopyApproach(parseInt(tab.dataset.tab)));
+    });
 
     // document.addEventListener('click', function(event) {
     //
