@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         deleteButton.addEventListener('click', () => {
             taskWrapper.remove();
-            taskId--;
         })
 
         
