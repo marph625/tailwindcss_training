@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const taskContainer = document.createElement('div');
     const parentDiv = document.getElementById('parent-div');
 
-    const openTasks = [];
-    const doneTasks = [];
+    // const openTasks = [];
+    // const doneTasks = [];
     
     let taskId = 0;
     
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
-    inputButton.addEventListener('click', function (event)  {
+    inputButton.addEventListener('click', function ()  {
         if (inputField.value.trim() !== '') {
             addTask(inputField.value.trim());
             inputField.value = '';
@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const sepLine = document.createElement('hr');
         sepLine.classList.add('border-1', 'border-gray-400', 'mt-2');
 
+
+        // new tasks will be added to 'new'
         taskWrapper.appendChild(newCheckbox);
         taskWrapper.appendChild(taskLabel);
         taskWrapper.appendChild(deleteButton);
@@ -53,14 +55,17 @@ document.addEventListener('DOMContentLoaded', function () {
         newCheckbox.addEventListener('click', () => {
             taskLabel.classList.toggle('line-through');
             // TODO: Move all new tasks into an array. Move done tasks into another array. Display the tasks depending in which array they are.
-            doneTasks.push(newCheckbox);
-            console.log(doneTasks);
+
+            // checked tasks will be added to 'in progress'
+            // doneTasks.push(newCheckbox);
+            // console.log(doneTasks);
         });
 
         deleteButton.addEventListener('click', () => {
             taskWrapper.remove();
             sepLine.remove();
             taskId--;
+            // deleted tasks will be moved to 'done'
         });
     }
 });
